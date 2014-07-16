@@ -1316,6 +1316,9 @@ INSTALLED_APPS = (
 
     # Monitoring functionality
     'monitoring',
+
+    # edit by wwj
+    'murp',
 )
 
 ######################### MARKETING SITE ###############################
