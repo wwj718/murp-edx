@@ -1,0 +1,137 @@
+{
+    "ANALYTICS_API_KEY": "", 
+    "AWS_ACCESS_KEY_ID": "", 
+    "AWS_SECRET_ACCESS_KEY": "", 
+    "CELERY_BROKER_PASSWORD": "celery", 
+    "CELERY_BROKER_USER": "celery", 
+    "CONTENTSTORE": {
+        "ADDITIONAL_OPTIONS": {}, 
+        "DOC_STORE_CONFIG": {
+            "collection": "modulestore", 
+            "db": "edxapp", 
+            "host": [
+                "localhost"
+            ], 
+            "password": "password", 
+            "port": 27017, 
+            "user": "edxapp"
+        }, 
+        "ENGINE": "xmodule.contentstore.mongo.MongoContentStore", 
+        "OPTIONS": {
+            "db": "edxapp", 
+            "host": [
+                "localhost"
+            ], 
+            "password": "password", 
+            "port": 27017, 
+            "user": "edxapp"
+        }
+    }, 
+    "DATABASES": {
+        "default": {
+            "ENGINE": "django.db.backends.mysql", 
+            "HOST": "localhost", 
+            "NAME": "edxapp", 
+            "PASSWORD": "password", 
+            "PORT": "3306", 
+            "USER": "edxapp001"
+        }, 
+        "read_replica": {
+            "ENGINE": "django.db.backends.mysql", 
+            "HOST": "localhost", 
+            "NAME": "edxapp", 
+            "PASSWORD": "password", 
+            "PORT": "3306", 
+            "USER": "edxapp001"
+        }
+    }, 
+    "DOC_STORE_CONFIG": {
+        "collection": "modulestore", 
+        "db": "edxapp", 
+        "host": [
+            "localhost"
+        ], 
+        "password": "password", 
+        "port": 27017, 
+        "user": "edxapp"
+    }, 
+    "GOOGLE_ANALYTICS_ACCOUNT": "UA-DUMMY", 
+    "MODULESTORE": {
+        "default": {
+            "DOC_STORE_CONFIG": {
+                "collection": "modulestore", 
+                "db": "edxapp", 
+                "host": [
+                    "localhost"
+                ], 
+                "password": "password", 
+                "port": 27017, 
+                "user": "edxapp"
+            }, 
+            "ENGINE": "xmodule.modulestore.mongo.DraftMongoModuleStore", 
+            "OPTIONS": {
+                "collection": "modulestore", 
+                "db": "edxapp", 
+                "default_class": "xmodule.hidden_module.HiddenDescriptor", 
+                "fs_root": "/edx/var/edxapp/data", 
+                "host": [
+                    "localhost"
+                ], 
+                "password": "password", 
+                "port": 27017, 
+                "render_template": "edxmako.shortcuts.render_to_string", 
+                "user": "edxapp"
+            }
+        }, 
+        "direct": {
+            "DOC_STORE_CONFIG": {
+                "collection": "modulestore", 
+                "db": "edxapp", 
+                "host": [
+                    "localhost"
+                ], 
+                "password": "password", 
+                "port": 27017, 
+                "user": "edxapp"
+            }, 
+            "ENGINE": "xmodule.modulestore.mongo.MongoModuleStore", 
+            "OPTIONS": {
+                "collection": "modulestore", 
+                "db": "edxapp", 
+                "default_class": "xmodule.hidden_module.HiddenDescriptor", 
+                "fs_root": "/edx/var/edxapp/data", 
+                "host": [
+                    "localhost"
+                ], 
+                "password": "password", 
+                "port": 27017, 
+                "render_template": "edxmako.shortcuts.render_to_string", 
+                "user": "edxapp"
+            }
+        }
+    }, 
+    "OPEN_ENDED_GRADING_INTERFACE": {
+        "grading_controller": "grading_controller", 
+        "password": "password", 
+        "peer_grading": "peer_grading", 
+        "staff_grading": "staff_grading", 
+        "url": "http://localhost:18060/", 
+        "username": "lms"
+    }, 
+    "SECRET_KEY": "", 
+    "XQUEUE_INTERFACE": {
+        "basic_auth": [
+            "edx", 
+            "edx"
+        ], 
+        "django_auth": {
+            "password": "password", 
+            "username": "lms"
+        }, 
+        "url": "http://localhost:18040"
+    }, 
+    "ZENDESK_API_KEY": "", 
+    "ZENDESK_USER": "",
+    "EMAIL_HOST_USER": "2230360562@qq.com",
+    "EMAIL_HOST_PASSWORD":"wwjtest"
+}
