@@ -1,0 +1,595 @@
+> article.new-post-article {
+    .ionisx-container();
+
+    overflow: visible !important;
+    margin-top: @layout-top-spacing / 2;
+
+    > .inner-wrapper {
+        .square(auto);
+
+        min-width: 0;
+        max-width: none;
+
+        > .new-post-form {
+            .square(auto);
+
+            border: 1px solid @color-border;
+            border-radius: @default-border-radius;
+            margin: 0;
+            background: none;
+            box-shadow: none;
+            padding: 30px;
+            color: @white;
+            background-color: fadeout(@black, 20%);
+
+            @media (max-width: @screen-xs-max) {
+                padding: 10px;
+            }
+
+            > .left-column {
+                padding: 0;
+
+                .make-xs-column(12);
+                .make-sm-column(12);
+                .make-md-column(4);
+                .make-lg-column(4);
+
+                padding-left: 0;
+
+                @media (max-width: @screen-sm-max) {
+                    padding: 0;
+                }
+            }
+
+            > .right-column {
+                padding: 0;
+
+                .make-xs-column(12);
+                .make-sm-column(12);
+                .make-md-column(8);
+                .make-lg-column(8);
+
+                padding-right: 0;
+
+                @media (max-width: @screen-sm-max) {
+                    padding: 0;
+                    margin-top: 1em;
+                }
+
+                .new-post-form-errors {
+                    .ionisx-alert-error();
+
+                    li {
+                        background: none;
+                        border: 0 none;
+                        padding: 0;
+                    }
+                }
+
+                input[type=text],
+                input[type=email],
+                input[type=password],
+                textarea {
+                    .ionisx-input();
+
+                    color: @black;
+                }
+
+                .wmd-panel {
+                    .square(auto);
+                    min-width: 0;
+
+                    textarea {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+
+                    .wmd-preview-container {
+                        .square(auto);
+
+                        box-shadow: none;
+                        border: 0 none;
+                    }
+                }
+
+                input[type=submit] {
+                    .ionisx-btn(@white, @color-success);
+
+                    font-size: 0.9em;
+                }
+
+                .new-post-cancel {
+                    .ionisx-btn(@black, @color-background);
+
+                    font-size: 0.9em;
+                    margin-left: 1em;
+                }
+            }
+
+        }
+    }
+}
+
+> .discussion {
+    > .discussion-body {
+        padding: 0;
+        border: 0 none;
+        background: none;
+        border-radius: 0;
+        overflow: visible;
+
+        > .sidebar {
+            border: 1px solid @color-border;
+            border-radius: @default-border-radius;
+            box-shadow: none;
+            display: block;
+            height: auto !important;
+
+            @media (max-width: @screen-sm-max) {
+                .square(auto) !important;
+
+                margin-bottom: 1em;
+                float: none;
+            }
+
+            .browse-topic-drop-btn {
+                text-decoration: none;
+            }
+
+            .post-list-wrapper {
+                height: auto !important;
+
+                .post-list {
+                    border-bottom-left-radius: @default-border-radius;
+                    border-bottom-right-radius: @default-border-radius;
+                    background: none;
+                    background-color: @white;
+                    padding: 0 0 3em 0;
+                    margin: 0;
+
+                    li {
+                        padding: 0;
+                        margin: 0;
+
+                        a {
+                            background: none;
+                            box-shadow: none;
+                            color: @black;
+                            border-bottom: 1px solid @color-border;
+                            margin: 0;
+                            padding: 0 0.4em 0 1.9em;
+
+                            &:before {
+                                font-family: 'FontAwesome';
+                                content: '\f006';
+                                position: absolute;
+                                left: 0.5em;
+                                top: 0.75em;
+                                color: @color-primary;
+                            }
+
+                            span {
+                                color: inherit;
+                                font: inherit;
+
+                                &.votes-count {
+                                    .square(auto);
+
+                                    font-size: 0.9em;
+                                    padding: 2px 4px;
+                                    background: none;
+                                }
+
+                                &.comments-count {
+                                    .square(auto);
+
+                                    font-size: 0.9em;
+                                    padding: 2px 4px;
+                                    background: none;
+
+                                    &:before {
+                                        font-family: 'FontAwesome';
+                                        content: '\f086';
+                                    }
+
+                                    &:after {
+                                        background: none;
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            &.read {
+                                background: none;
+                            }
+
+                            &.active {
+                                background: @color-primary;
+                                color: @white;
+
+                                &:before {
+                                    color: @white;
+                                }
+                            }
+
+                            &.followed {
+                                &:before {
+                                    content: '\f005';
+                                }
+
+                                &:after {
+                                    display: none;
+                                    background: none;
+                                }
+                            }
+                        }
+
+                        &.more-pages {
+                            a:before {
+                                content: none;
+                                display: none;
+                            }
+                        }
+
+                        &:last-child {
+                            a {
+                                border: 0 none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > .discussion-column {
+            border: 1px solid @color-border;
+            border-radius: @default-border-radius;
+            box-shadow: none;
+            background: none;
+            min-height: 0;
+            background-color: @white;
+            display: block;
+
+            @media (max-width: @screen-sm-max) {
+                .square(auto);
+
+                float: none;
+            }
+
+            > .discussion-article {
+                &.blank-slate {
+                    padding: 30px;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+
+                    .home-header {
+                        border-bottom: 1px solid @color-border;
+                        margin: 0 0 1em 0;
+
+                        .label {
+                            display: none;
+                        }
+
+                        h1 {
+                            font: inherit;
+                            font-size: @font-size-h2;
+                            font-weight: @headings-font-weight;
+                            color: @color-primary;
+                            border: 0 none;
+                            padding: 0;
+                            margin: 0 0 0.5em 0;
+                        }
+                    }
+                }
+
+                input[type=text],
+                input[type=email],
+                input[type=password],
+                textarea {
+                    .ionisx-input();
+
+                    color: @black;
+                }
+
+                .wmd-panel {
+                    .square(auto);
+                    min-width: 0;
+
+                    textarea {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+
+                    .wmd-preview-container {
+                        .square(auto);
+
+                        box-shadow: none;
+                        border: 0 none;
+                    }
+                }
+
+                input[type=submit],
+                .discussion-submit-post,
+                .discussion-submit-comment {
+                    .ionisx-btn(@white, @color-success);
+
+                    font-size: 0.9em;
+                    margin-top: 1em;
+                }
+
+                .post-cancel {
+                    .ionisx-btn(@black, @color-background);
+
+                    font-size: 0.9em;
+                    margin-left: 1em;
+                    margin-top: 1em;
+                }
+
+                .moderator-actions {
+                    a {
+                        &.action-edit {
+                            .ionisx-btn(@white, @color-secondary);
+
+                            font-size: 0.8em;
+                            padding: 0.2em 1.2em;
+                        }
+
+                        &.action-delete {
+                            .ionisx-btn(@white, @color-error);
+
+                            font-size: 0.8em;
+                            padding: 0.2em 1.2em;
+                        }
+
+                        &.action-openclose {
+                            .ionisx-btn(@black, @color-border);
+
+                            font-size: 0.8em;
+                            padding: 0.2em 1.2em;
+                        }
+
+                        span {
+                            display: none;
+                            background: none;
+                        }
+                    }
+                }
+
+
+                .discussion-post {
+                    padding: 30px;
+                    box-shadow: none;
+                    border-bottom: 1px solid @color-border;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+
+                    h1 {
+                        font: inherit;
+                        font-size: @font-size-h2;
+                        font-weight: @headings-font-weight;
+                        color: @color-primary;
+                        border: 0 none;
+                        padding: 0;
+                        margin: 0 0 0.5em 0;
+                    }
+
+                    header {
+                        h1 {
+                            font: inherit;
+                            font-size: @font-size-h2;
+                            font-weight: @headings-font-weight;
+                            color: @color-primary;
+                            border: 0 none;
+                            padding: 0;
+                            margin: 0 0 0.5em 0;
+                        }
+
+                        .vote-btn {
+                            margin-top: 0;
+
+                            @media (max-width: @screen-xs-max) {
+                                margin-right: 40px;
+                            }
+                        }
+
+                        p.posted-details {
+                            font: inherit;
+
+                            a.username {
+                                font-weight: 500;
+                                display: inline;
+
+                                &:before {
+                                    font-family: 'FontAwesome';
+                                    content: '\f007';
+                                    margin-right: 4px;
+                                }
+
+                                &:hover {
+                                    text-decoration: none;
+                                    color: fadeout(@color-primary, 10%);
+                                }
+                            }
+
+                            .timeago {
+                                font: inherit;
+                                font-size: 0.8em;
+                                color: @color-disabled;
+                            }
+                        }
+                    }
+                }
+
+                .response-count {
+                    margin: 0;
+                    padding: 20px 30px;
+                    border-bottom: 1px solid @color-border;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+                }
+
+                .add-response {
+                    margin: 0;
+                    padding: 30px 30px 0;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px 10px 0;
+                    }
+
+                    button {
+                        .ionisx-btn(@white, @color-secondary);
+
+                        width: 100%;
+                    }
+                }
+
+                ol.responses {
+                    margin: 0;
+                    padding: 30px;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+
+                    > li {
+                        .square(auto);
+
+                        display: block;
+                        margin: 0 0 1em 0;
+                        box-shadow: none;
+                        border: 1px solid @color-border;
+                        border-radius: @default-border-radius;
+                        transition: none;
+                        overflow: hidden;
+                        padding: 0;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+
+                        .discussion-response {
+                            border-radius: @default-border-radius;
+                            background-color: @white;
+                            padding: 1em;
+
+                            &.staff {
+                                .staff-banner {
+                                    .square(auto);
+
+                                    display: inline;
+                                    float: left;
+                                    font: inherit;
+                                    text-transform: none;
+                                    position: static;
+                                    background: none;
+                                    background-color: @color-warning;
+                                    color: @white;
+                                    margin: 0 0.6em 0 0;
+                                    padding: 2px 8px;
+                                    border-radius: @default-border-radius;
+                                }
+                            }
+
+                            header {
+                                .posted-by {
+                                    font-weight: 500;
+                                    display: inline;
+
+                                    &:before {
+                                        font-family: 'FontAwesome';
+                                        content: '\f007';
+                                        margin-right: 4px;
+                                    }
+
+                                    &:hover {
+                                        text-decoration: none;
+                                        color: fadeout(@color-primary, 10%);
+                                    }
+                                }
+
+                                .posted-details {
+                                    display: inline;
+                                    font: inherit;
+                                    font-size: 0.8em;
+                                    color: @color-disabled;
+                                }
+                            }
+                        }
+                        .comments {
+                            li {
+                                background-color: @color-background;
+                                padding: 0.6em 1em;
+
+                                .posted-details {
+                                    font: inherit;
+                                    color: @color-disabled;
+                                    font-size: 0.8em;
+
+                                    .timeago {
+                                        font: inherit;
+                                        font-weight: 600;
+                                    }
+
+                                    .staff-label {
+                                        font: inherit;
+                                        font-size: 0.8em;
+                                        background-color: @color-warning;
+                                        color: @white;
+                                        margin: 0 0 0 5px;
+                                    }
+                                }
+                            }
+
+                            .new-comment {
+                                background: none;
+                                padding: 0;
+                                border: 0 none;
+
+                                .comment-form {
+                                    background: none;
+                                    background-color: @color-background;
+                                    padding: 1em;
+                                    border-top: 1px solid @color-border;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .response-pagination {
+                    padding: 20px 30px;
+                    box-shadow: none;
+                    background: none;
+                    border-top: 1px solid @color-border;
+                    border-bottom: 1px solid @color-border;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+
+                    span {
+                        padding: 0;
+                    }
+                }
+
+                .discussion-reply-new {
+                    padding: 30px;
+
+                    @media (max-width: @screen-xs-max) {
+                        padding: 10px;
+                    }
+
+                    h4 {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
