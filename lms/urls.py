@@ -24,8 +24,7 @@ urlpatterns = ('',  # nopep8
     #url(r'^wwjtest$','murp.views.murp_hello',name='murp_hello'),    
 
     url(r'^murp$','murp.views.murp_hello',name='murp_hello'),    
-    
-    url(r'^murp/2$','murp.views.murp_hello',name='murp_hello'),    
+    url(r'^course-list$','murp.views.course_list',name='course_list'),    
     #end by wwj 
     
     url(r'^admin_dashboard$', 'dashboard.views.dashboard'),
